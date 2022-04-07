@@ -1,0 +1,44 @@
+<section id="contact">
+    <div class="container mb-5">
+        <h2><strong>Me Contacter</strong></h2>
+        <span class="bar-title mb-5"></span>
+        <div class="row" data-aos="fade-up" data-aos-anchor-placement="top-center">
+            <div class="col-md-3 col-lg-3">
+                <div class="contact-info">
+                    <img src="assets/images/contact-image.png" alt="image" />
+                    <h4>N'hésitez pas à me contacter</h4>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 offset-md-1">
+                            <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+                                <div class="form-group">
+                                    <label for="Email">Email</label>
+                                    <input type="email" class="form-control" name="Email" aria-describedby="emailHelp"
+                                        placeholder="ex : test@test.fr" formControlName="Email">
+                                    <small id="emailHelp" class="form-text text-muted">Votre email ne sera pas
+                                        réutilisé</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fullname">Nom - Prénom</label>
+                                    <input type="text" class="form-control" name="Fullname"
+                                        placeholder="ex : Jean Dupont" formControlName="Fullname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment">Message</label>
+                                    <textarea class="form-control" formControlName="Comment" name="Comment">
+                    </textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary"
+                                    [disabled]="!FormData.valid">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
