@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators, NgForm } from '@angular/forms';
 import { ContactService } from '../contact.service';
 
 @Component({
@@ -9,15 +9,15 @@ import { ContactService } from '../contact.service';
 })
 export class ContactComponent implements OnInit {
 
-  FormData!: FormGroup;
+  FormData!: UntypedFormGroup;
 
-  constructor(private builder: FormBuilder, private contact: ContactService) { }
+  constructor(private builder: UntypedFormBuilder, private contact: ContactService) { }
 
   ngOnInit(): void {
     this.FormData = this.builder.group({
-      Fullname: new FormControl('', [Validators.required]),
-      Email: new FormControl('', [Validators.email, Validators.required]),
-      Comment: new FormControl('', [Validators.required])
+      Fullname: new UntypedFormControl('', [Validators.required]),
+      Email: new UntypedFormControl('', [Validators.email, Validators.required]),
+      Comment: new UntypedFormControl('', [Validators.required])
 
     })
 
