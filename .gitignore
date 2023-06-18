@@ -104,3 +104,10 @@ typings/
 
 # Build directory
 dist/
+
+#VSCode repo
+.idea/
+
+#MacOS files
+.DS_Store
+src/.DS_Store
